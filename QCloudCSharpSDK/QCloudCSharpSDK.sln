@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.136
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29020.237
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "COSXML", "COSXML\COSXML.csproj", "{FC694C68-F0E3-411F-8E6C-2E9F94826016}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "COSXML", "COSXML\COSXML.Core.csproj", "{106A37C6-65C0-4F36-B384-105D7E64A344}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "COSXMLTests", "COSXMLTests\COSXMLTests.csproj", "{32F37FE7-F201-46C7-8697-4F9211045985}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{CBAD3EED-4D5E-46E8-B3DE-742A6A56988D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FC694C68-F0E3-411F-8E6C-2E9F94826016}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FC694C68-F0E3-411F-8E6C-2E9F94826016}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FC694C68-F0E3-411F-8E6C-2E9F94826016}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FC694C68-F0E3-411F-8E6C-2E9F94826016}.Release|Any CPU.Build.0 = Release|Any CPU
-		{32F37FE7-F201-46C7-8697-4F9211045985}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{32F37FE7-F201-46C7-8697-4F9211045985}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{32F37FE7-F201-46C7-8697-4F9211045985}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{32F37FE7-F201-46C7-8697-4F9211045985}.Release|Any CPU.Build.0 = Release|Any CPU
+		{106A37C6-65C0-4F36-B384-105D7E64A344}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{106A37C6-65C0-4F36-B384-105D7E64A344}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{106A37C6-65C0-4F36-B384-105D7E64A344}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{106A37C6-65C0-4F36-B384-105D7E64A344}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBAD3EED-4D5E-46E8-B3DE-742A6A56988D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBAD3EED-4D5E-46E8-B3DE-742A6A56988D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBAD3EED-4D5E-46E8-B3DE-742A6A56988D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBAD3EED-4D5E-46E8-B3DE-742A6A56988D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

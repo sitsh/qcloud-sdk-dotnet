@@ -195,5 +195,10 @@ namespace COSXML.Model.Object
             
             return result;
         }
+
+        public string GetLocalDir()
+        {
+            return this.localDir;
+        }
     }
 }

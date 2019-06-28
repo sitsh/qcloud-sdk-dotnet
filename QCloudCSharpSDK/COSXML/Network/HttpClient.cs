@@ -120,8 +120,18 @@ namespace COSXML.Network
                 if (cosRequest is GetObjectRequest)
                 {
                     GetObjectRequest getObjectRequest = cosRequest as GetObjectRequest;
-                    response = new CosResponse(cosResult, getObjectRequest.GetSaveFilePath(), getObjectRequest.GetLocalFileOffset(),
-                        getObjectRequest.GetCosProgressCallback());
+
+                    if (getObjectRequest.GetLocalDir() == null)
+                    {
+                        response = new CosResponse(cosResult, null, -1L,
+                            getObjectRequest.GetCosProgressCallback());
+                    }
+                    else
+                    {
+                        response = new CosResponse(cosResult, getObjectRequest.GetSaveFilePath(), getObjectRequest.GetLocalFileOffset(),
+                            getObjectRequest.GetCosProgressCallback());
+                    }
+                   
                 }
                 else
                 {
@@ -204,7 +214,7 @@ namespace COSXML.Network
 
         private Request CreateRequest(CosRequest cosRequest)
         {
-            cosRequest.CheckParameters();
+            //cosRequest.CheckParameters();
             string requestUrlWithSign = cosRequest.RequestURLWithSign;
             Request request = new Request();
             request.Method = cosRequest.Method;
