@@ -19,8 +19,6 @@ namespace COSXML.Model.Object
         /// </summary>
         public string eTag;
 
-        public MemoryStream fileStream;
-
         internal override void InternalParseResponseHeaders()
         {
             List<string> values;
@@ -30,13 +28,5 @@ namespace COSXML.Model.Object
                 eTag = values[0];
             }
         }
-
-        internal override void ParseResponseBody(Stream inputStream, string contentType, long contentLength)
-        {
-            fileStream=new MemoryStream();
-              inputStream.CopyTo(fileStream);
-            //fileStream.Position = 0;
-        }
-
     }
 }

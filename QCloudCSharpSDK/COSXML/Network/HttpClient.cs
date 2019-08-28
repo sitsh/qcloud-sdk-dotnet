@@ -115,28 +115,20 @@ namespace COSXML.Network
             {
                 Request request = CreateRequest(cosRequest);
                 //extern informations exchange
-                //cosResult.ExternInfo(cosRequest);
+                cosResult.ExternInfo(cosRequest);
+
                 Response response;
                 if (cosRequest is GetObjectRequest)
                 {
                     GetObjectRequest getObjectRequest = cosRequest as GetObjectRequest;
-
-                    if (getObjectRequest.GetLocalDir() == null)
-                    {
-                        response = new CosResponse(cosResult, null, -1L,
-                            getObjectRequest.GetCosProgressCallback());
-                    }
-                    else
-                    {
-                        response = new CosResponse(cosResult, getObjectRequest.GetSaveFilePath(), getObjectRequest.GetLocalFileOffset(),
-                            getObjectRequest.GetCosProgressCallback());
-                    }
-                   
+                    response = new CosResponse(cosResult, getObjectRequest.GetSaveFilePath(), getObjectRequest.GetLocalFileOffset(),
+                        getObjectRequest.GetCosProgressCallback());
                 }
                 else
                 {
                     response = new CosResponse(cosResult, null, -1L, null);
                 }
+                
                 cosRequest.BindRequest(request);
                 CommandTask.Excute(request, response, config);
             }
@@ -214,7 +206,7 @@ namespace COSXML.Network
 
         private Request CreateRequest(CosRequest cosRequest)
         {
-            //cosRequest.CheckParameters();
+            cosRequest.CheckParameters();
             string requestUrlWithSign = cosRequest.RequestURLWithSign;
             Request request = new Request();
             request.Method = cosRequest.Method;
@@ -372,7 +364,7 @@ namespace COSXML.Network
                 cosServerException.requestId = (values != null && values.Count > 0) ? values[0] : null;
                 Headers.TryGetValue("x-cos-trace-id", out values);
                 cosServerException.traceId = (values != null && values.Count > 0) ? values[0] : null;
-                if (inputStream != null && contentLength > 0)
+                if (inputStream != null)
                 {
                     CosServerError cosServerError = new CosServerError();
                     try
